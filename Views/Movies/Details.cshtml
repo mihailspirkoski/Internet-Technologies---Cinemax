@@ -1,0 +1,90 @@
+﻿@model Cinemax.Models.Movie
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div class="row">
+    <div class="col-md-6">
+        <h4>Movie</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.MovieTitle)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MovieTitle)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.MoviePrice)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MoviePrice)$
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.MovieImage)
+            </dt>
+
+            <dd>
+                <img src="@Model.MovieImage" style="height: 200px; width: 260px" />
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.MovieGenre)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MovieGenre)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.MovieDirector)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MovieDirector)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.MovieActors)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MovieActors)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.MovieRating)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MovieRating) / 10.00
+            </dd>
+
+        </dl>
+    </div>
+
+    <div class="col-md-6">
+        <h4>@Model.MovieTitle - available on:</h4>
+        <hr />
+        <ul>
+            @foreach (var platform in Model.platforms)
+            {
+            <li>
+                <a href="/Platforms/Details/@platform.Id" style="color: firebrick">@platform.PlatformName</a>
+            </li>
+            }
+        </ul>
+    </div>
+</div>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class="btn btn-warning"} ) 
+    @Html.ActionLink("Back to List", "Index")
+</p>

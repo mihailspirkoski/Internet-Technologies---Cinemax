@@ -1,0 +1,19 @@
+﻿@model Cinemax.Models.DeleteFromPlatform
+@{
+    ViewBag.Title = "AddAMovieToPlatform";
+}
+
+<h2>Delete movie from Platform: @ViewBag.PlatformName</h2>
+
+@using (Html.BeginForm("DeleteMovieFromPlatform", "Platforms"))
+{
+    <div class="form-group">
+        @Html.DropDownListFor(m => m.selectedMovie, new SelectList(Model.movies, "Id", "MovieTitle"), new { @class = "form-control" })
+    </div>
+    <button type="submit" class="btn btn-danger">Delete</button>
+
+    @Html.HiddenFor(m => m.selectedPlatform)
+}
+<div style="margin-top: 20px">
+    @Html.ActionLink("Back to List", "Index")
+</div>

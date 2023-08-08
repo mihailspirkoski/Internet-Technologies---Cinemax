@@ -1,0 +1,60 @@
+﻿@model Cinemax.Models.Platform
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div class="row">
+    <div class="col-md-6">
+        <h4>Platform</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.PlatformName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PlatformName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.PlatformAddress)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PlatformAddress)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.PlatformImage)
+            </dt>
+
+            <dd>
+                <img src="@Model.PlatformImage" style="height: 200px; width: 260px" />
+            </dd>
+
+        </dl>
+    </div>
+
+    <div class="col-md-6">
+        <h4>List of movies you can watch on @Model.PlatformName:</h4>
+        <hr />
+        <ul>
+            @foreach (var item in Model.movies)
+            {
+                <li>
+                    <a href="/Movies/Details/@item.Id" style="color: firebrick">@item.MovieTitle</a>
+                </li>
+            }
+
+        </ul>
+
+    </div>
+   
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class="btn btn-warning" }) 
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,42 @@
+﻿@model Cinemax.Models.Trivia
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Trivia</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TriviaName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TriviaName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TriviaImage)
+        </dt>
+
+        <dd>
+            <img src="@Model.TriviaImage" style="height: 200px; width: 260px" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TriviaDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TriviaDescription)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class= "btn btn-warning" }) 
+    @Html.ActionLink("Back to List", "Index")
+</p>

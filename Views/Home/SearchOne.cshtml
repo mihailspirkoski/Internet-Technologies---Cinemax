@@ -1,0 +1,15 @@
+﻿@model Cinemax.Models.SearchModel
+@{
+    ViewBag.Title = "Search";
+}
+@using (Html.BeginForm("SearchOne", "Home", FormMethod.Post))
+{
+    <div class="input-group">
+        @Html.TextBoxFor(model => model.Search, htmlAttributes: new { @type = "search", @placeholder = "Search movie related data", @class= "navbar-form form-inline form-control my-2", @style="background-color: white" })
+        <div class="input-group-append border-0">
+            <a href="javascript:$('form').submit();">
+              
+            </a>
+        </div>
+    </div>
+}

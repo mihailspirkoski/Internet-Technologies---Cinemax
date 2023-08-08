@@ -1,0 +1,88 @@
+﻿@model IEnumerable<Cinemax.Models.Movie>
+@{
+    ViewBag.Title = "Search";
+}
+
+<h2>Search Results</h2>
+
+
+<table class="table" id="jquerydatasearch">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MovieTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MoviePrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MovieImage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MovieGenre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MovieDirector)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MovieActors)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MovieRating)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MovieTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MoviePrice)
+                </td>
+                <td>
+                    <img src="@item.MovieImage" style="height: 200px; width: 260px" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MovieGenre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MovieDirector)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MovieActors)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MovieRating)
+                </td>
+                <td>
+                    <button class="btn-link js-delete">Edit</button> 
+                    <button class="btn-link js-delete">Details</button> 
+                    <button class="btn-link js-delete">Delete</button>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div style="visibility:hidden">.</div>
+<div style="visibility:hidden; clear: both ">.</div>
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $("#jquerydatasearch").DataTable();
+            $("#jquerydatasearch").on("click", ".js-delete", function () {
+                bootbox.alert({
+                    message: "Movie operations are unavailable via Search Results View!",
+                    size: 'small'
+                });
+            });
+        });
+    </script>
+    }
+

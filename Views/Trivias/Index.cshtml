@@ -1,0 +1,109 @@
+﻿@model List<Cinemax.Models.Trivia>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container" style="margin-bottom: 30px">
+    <div>
+        @Html.ActionLink("Add New Trivia", "Create", new { area = "" }, new { @class = "btn btn-success" })
+    </div>
+
+
+    <div id="genre" class="row" style="margin-top: 30px">
+        <h2 style="margin-top: 10px">Most popular Genres of the month</h2>
+        
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            var item = Model[i];
+
+            if (item.TriviaDescription.Contains("Genre"))
+            {
+                <div class="col-md-3" style="margin-right: 80px; background-color: darkslategrey; border: 2px solid firebrick; color: black">
+                    <card style="width: 18rem; height: 30rem;">
+                        <img class="card-img-top" src="@item.TriviaImage" style="height: 200px; width: 260px" alt="Image" />
+                        <div class="card-body" style="background-color: darkslategrey">
+                            <h2 class="card-title"><b>@item.TriviaName</b></h2>
+                            <p style="visibility: hidden">.</p>
+                        </div>
+
+                        <div class="card-footer text-center" style="background-color: darkslategrey; color: black">
+
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-warning" })
+                            @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
+                            @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-info" })
+
+                        </div>
+                    </card>
+                </div>
+            }
+        }
+
+
+    </div>
+
+    <div id="actor" class="row" style="margin-top: 30px">
+        <hr style="margin-bottom: 10px; color: mediumpurple" />
+        <h2 style="margin-top: 10px">Most popular Actors of the month</h2>
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            var item = Model[i];
+            if (item.TriviaDescription.Contains("Actors"))
+            {
+                <div class="col-md-3" style="margin-right: 80px; background-color: darkslategrey; border: 2px solid firebrick; color: black">
+                    <card style="width: 18rem; height: 30rem;">
+                        <img class="card-img-top" src="@item.TriviaImage" style="height: 200px; width: 260px" alt="Image" />
+                        <div class="card-body" style="background-color: darkslategrey">
+                            <h2 class="card-title"><b>@item.TriviaName</b></h2>
+                            <p style="visibility: hidden">.</p>
+                        </div>
+
+                        <div class="card-footer text-center" style="background-color: darkslategrey; color: black">
+
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-warning" })
+                            @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
+                            @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-info" })
+
+                        </div>
+                    </card>
+                </div>
+            }
+        }
+
+
+    </div>
+
+    <div id="director" class="row" style="margin-top: 30px">
+        <hr style="margin-bottom: 10px; color: mediumpurple" />
+        <h2 style="margin-top: 10px">Most popular Directors of the month</h2>
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            var item = Model[i];
+            if (item.TriviaDescription.Contains("Director"))
+            {
+                <div class="col-md-3" style="margin-right: 80px; background-color: darkslategrey; border: 2px solid firebrick; color: black">
+                    <card style="width: 18rem; height: 30rem;">
+                        <img class="card-img-top" src="@item.TriviaImage" style="height: 200px; width: 260px" alt="Image" />
+                        <div class="card-body" style="background-color: darkslategrey">
+                            <h2 class="card-title"><b>@item.TriviaName</b></h2>
+                            <p style="visibility: hidden">.</p>
+                        </div>
+
+                        <div class="card-footer text-center" style="background-color: darkslategrey; color: black">
+
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-warning" })
+                            @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
+                            @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-info" })
+
+                        </div>
+                    </card>
+                </div>
+            }
+        }
+
+
+    </div>
+
+</div>
+
+

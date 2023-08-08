@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Cinemax</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body style="background-color: black">
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color: firebrick">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Cinemax", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Movies", "Index", "Movies")</li>
+                    <li>@Html.ActionLink("Platforms", "Index", "Platforms")</li>
+                    <li>@Html.ActionLink("Trivia", "Index", "Trivias")</li>
+                    <li>@Html.ActionLink("Add User To Role", "AddUserToRole", "Account")</li>
+                    <li>
+                        @{
+                            Html.RenderAction("SearchOne", "Home");
+                        }
+                    </li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content" style="margin-top: 75px;">
+        @RenderBody()
+        
+        <footer class="border-top" style="position: fixed; left: 0px; bottom: 0px; height: 40px; width: 100%; background-color: firebrick; border-top: 1px solid black; opacity: 1">
+            
+            <div class="container" style="color: black">
+                <p>&copy; 2021 - Cinemax</p>
+            </div>
+            
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

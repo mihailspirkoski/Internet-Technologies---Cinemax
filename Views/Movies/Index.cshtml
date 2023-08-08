@@ -1,0 +1,124 @@
+﻿@model List<Cinemax.Models.Movie>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container"  style="margin-bottom: 30px">
+    <div>
+        @Html.ActionLink("Add New Movie", "Create", new { area = "" }, new { @class = "btn btn-success" })
+    </div>
+
+    @for (int i = 0; i < Model.Count; i++)
+    {
+        var item = Model[i];
+
+        if (i % 3 == 0)
+        {
+            @:<div class="row" style="margin-top: 20px">
+            }
+
+
+            <div class="col-md-3" style="margin-right: 80px; background-color: darkslategrey; border: 2px solid firebrick; color: black">
+                <card style="width: 18rem; height: 30rem;">
+                    <img  class="card-img-top" src="@item.MovieImage" style="height: 200px; width: 260px" alt="Image" />
+                    <div class="card-body" style="background-color: darkslategrey; margin-top: 1px">
+                        <h4 class="card-title"><b>@item.MovieTitle</b></h4>
+                        <p>Rating: <b>@item.MovieRating / 10,00</b></p>
+                        <p>Genre: @item.MovieGenre</p>
+                        <p class="card-text">Director: @item.MovieDirector</p>
+                        <p class="card-text">Actors: @item.MovieActors</p>
+                        <p>Price: <b>@item.MoviePrice$</b></p>
+                    </div>
+
+                    <div class="card-footer text-center" style="background-color: darkslategrey; color: black">
+
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-warning" })
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
+                        @Html.ActionLink("Availability", "Details", new { id = item.Id }, new { @class = "btn btn-info" })
+
+                    </div>
+                </card>
+            </div>
+
+
+
+            if (i % 3 == 2)
+            {
+            @:</div>
+        }
+    }
+
+</div>
+
+@*<h2>Index</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MovieTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MoviePrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MovieImage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MovieGenre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MovieDirector)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MovieActors)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MovieRating)
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MovieTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MoviePrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MovieImage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MovieGenre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MovieDirector)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MovieActors)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MovieRating)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            </td>
+        </tr>
+    }
+
+    </table>
+*@
+
+
+
+
+
+
+
