@@ -16,3 +16,6 @@ User login (roles: admin, user and anonymous with different authorizations);
 Search bar functionality, results are shown using JqueryDatatable;
 
 Bootbox alerts;
+
+
+Admin credentials - User: dotnetapp111@gmail.com; Password: Test123@
