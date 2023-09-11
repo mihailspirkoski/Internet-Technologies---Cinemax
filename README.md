@@ -20,7 +20,7 @@ ASP.NET MVC Application for movies management, using MySQL database
 
 1. Download or clone the repository (Download ZIP or `git clone` )
 2. Open the project solution
-4. Admin credentials - User: dotnetapp111@gmail.com; Password: Test123@
+3. Admin credentials - User: dotnetapp111@gmail.com; Password: Test123@
 
 
 
