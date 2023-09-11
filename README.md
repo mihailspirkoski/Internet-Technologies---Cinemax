@@ -1,5 +1,5 @@
 # Internet-Technologies---Cinemax
-ASP.NET Application for movies management, using MySQL database
+ASP.NET MVC Application for movies management, using MySQL database
 
 
 **__Description/Functionalities__**
