@@ -12,13 +12,22 @@ ASP.NET MVC Application for movies management, using MySQL database
 7. Bootbox alerts
 
 
-**Cinemax**
-![image](https://github.com/mihailspirkoski/Internet-Technologies---Cinemax/assets/74495955/c6461c5b-18ae-481c-80d3-ff65295db51f)
+**Cinemax Home Page**
+![image](https://github.com/mihailspirkoski/Internet-Technologies---Cinemax/assets/74495955/2b24e9a8-c395-44d4-8fe0-6dd80948a127)
+
+**Cinemax Movie View**
+![image](https://github.com/mihailspirkoski/Internet-Technologies---Cinemax/assets/74495955/f22462e4-a863-4b15-8708-7efa959e73ca)
+
+**Cinemax Search View**
+![image](https://github.com/mihailspirkoski/Internet-Technologies---Cinemax/assets/74495955/7f4e8aa5-778f-40af-94f2-bfadca37b1fe)
+
+
+
 
 
 **__Instructions__**
 
-1. Download or clone the repository (Download ZIP or `git clone` )
+1. Download or clone the repository (Download ZIP or `git clone`)
 2. Open the project solution
 3. Admin credentials - User: dotnetapp111@gmail.com; Password: Test123@
 
